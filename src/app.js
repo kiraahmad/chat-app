@@ -35,6 +35,7 @@ io.on('connection', (socket) => {
         })
         callback()
     })
+
     socket.on('sendMessage', (message, callback) => {
         const user = getUser(socket.id)
         // const filter = new Filter()
@@ -61,8 +62,10 @@ io.on('connection', (socket) => {
                 users: getUsersInRoom(user.room)
             })
         }
-    })
+    })   
 })
+
+
 
 server.listen(port, () => {
     console.log(`server up and running on port ${port}`)
